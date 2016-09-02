@@ -1,6 +1,7 @@
 package metrics
 
 import (
+	"context"
 	"errors"
 )
 
@@ -20,6 +21,10 @@ func New(name, helptext string) Creator {
 	} else {
 		return ctorImpl(name, helptext)
 	}
+}
+
+func NewCtx(ctx context.Context, name, helptext string) Creator {
+	return New(CtxGetScope(ctx)+"."+name, helptext)
 }
 
 type InternalNew func(string, string) Creator
