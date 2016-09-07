@@ -40,5 +40,7 @@ type Creator interface {
 	Counter() Counter
 	Gauge() Gauge
 	Histogram(buckets []float64) Histogram
+
+	// opts cannot be nil, use empty summary instance
 	Summary(opts SummaryOpts) Summary
 }

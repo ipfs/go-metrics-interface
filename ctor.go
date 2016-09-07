@@ -37,3 +37,7 @@ func InjectImpl(newimpl InternalNew) error {
 		return nil
 	}
 }
+
+func Active() bool {
+	return ctorImpl != nil
+}
