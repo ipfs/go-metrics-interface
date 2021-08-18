@@ -1,3 +1,3 @@
 module github.com/ipfs/go-metrics-interface
 
-go 1.15
+go 1.16
