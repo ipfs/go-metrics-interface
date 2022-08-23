@@ -11,8 +11,9 @@ var ctorImpl InternalNew = nil
 
 // name is dot spearated path
 // must be uniqe, use system naming, and unit postfix, examples:
-//   ipfs.blockstore.bloomcache.bloom.miss.total
-//   ipfs.routing.dht.notresuingstream.total
+//
+//	ipfs.blockstore.bloomcache.bloom.miss.total
+//	ipfs.routing.dht.notresuingstream.total
 //
 // both arguemnts are obligatory
 func New(name, helptext string) Creator {
