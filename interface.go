@@ -12,10 +12,11 @@ type Counter interface {
 	Add(float64) // Only positive
 }
 
+type Labels map[string]string
+
 // CounterVec is a counter with tags.
 type CounterVec interface {
-	IncWithLabelValues(labels ...string)
-	AddWithLabelValues(n float64, labels ...string)
+	With(Labels) Counter
 }
 
 // Gauge is a metric that can be increased and decreased.
