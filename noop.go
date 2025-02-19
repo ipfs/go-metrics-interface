@@ -27,7 +27,7 @@ func (g *noop) Observe(v float64) {
 	// Noop
 }
 
-func (g *noop) With(labels Labels) Counter {
+func (g *noop) WithLabelValues(lvs ...string) Counter {
 	return g
 }
 
@@ -37,7 +37,7 @@ func (g *noop) Counter() Counter {
 	return g
 }
 
-func (g *noop) CounterVec() CounterVec {
+func (g *noop) CounterVec(lvs []string) CounterVec {
 	return g
 }
 

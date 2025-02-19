@@ -12,11 +12,9 @@ type Counter interface {
 	Add(float64) // Only positive
 }
 
-type Labels map[string]string
-
 // CounterVec is a counter with tags.
 type CounterVec interface {
-	With(Labels) Counter
+	WithLabelValues(lvs ...string) Counter
 }
 
 // Gauge is a metric that can be increased and decreased.
@@ -48,7 +46,7 @@ type SummaryOpts struct {
 // Creator can be used to create different types of metrics.
 type Creator interface {
 	Counter() Counter
-	CounterVec() CounterVec
+	CounterVec(labelNames []string) CounterVec
 	Gauge() Gauge
 	Histogram(buckets []float64) Histogram
 
