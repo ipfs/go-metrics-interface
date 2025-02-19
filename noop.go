@@ -27,12 +27,8 @@ func (g *noop) Observe(v float64) {
 	// Noop
 }
 
-func (g *noop) IncWithLabelValues(labels ...string) {
-	// Noop
-}
-
-func (g *noop) AddWithLabelValues(v float64, labels ...string) {
-	// Noop
+func (g *noop) With(labels Labels) Counter {
+	return g
 }
 
 // Creator functions
